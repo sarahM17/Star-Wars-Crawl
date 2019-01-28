@@ -1,0 +1,80 @@
+body {
+    background-image: url("https://images8.alphacoders.com/647/thumb-1920-647675.jpg");
+    background-repeat: no-repeat;
+}
+p#start {
+    position: relative;
+    text-align: center;
+    width: 16em;
+    font-size: 200%;
+    font-weight: 400;
+    margin: 20% auto;
+    color: dodgerblue;
+    opacity: 0;
+    z-index: 1;
+    animation: intro 4s ease-out;
+}
+
+@keyframes intro {
+    0% { opacity: 1; } 
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+.logo {
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    opacity: 0;
+    z-index: 1;
+    animation: logo 4s ease-in-out 5s;
+    animation-delay: logo 5s ease-in;
+}
+    
+@keyframes logo {
+    0% { transform: scale(1); opacity: 1;}
+    90% { opacity: 1;}
+    100% { transform: scale(0.1); opacity: 0;}
+}
+#titles {
+    position: absolute;
+    top: auto;
+    width: 18em;
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -9em;
+    font-size: 300%;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(25deg);
+}
+#titles:after {
+    position: absolute;
+    content: "title";
+    bottom: 60%;
+    pointer-events: none;
+}
+#titles p {
+    text-align: justify;
+    margin: 0.8em;
+    color: yellow;
+    text-decoration: none;
+}
+#titles p.center {
+    text-align: center;
+}
+
+#titlecontent {
+    position: absolute;
+    top: 100%;
+    animation: scroll 100s linear 8s infinite;
+}
+#titlecontent.hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -150%; }
+}
